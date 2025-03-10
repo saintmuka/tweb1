@@ -4,8 +4,41 @@
   <link rel="stylesheet" href="css/style3.css">
   <meta charset="UTF-8">
   <title></title>
+  <style>
+    body {
+      cursor: none;
+      background-color: black;
+      color: #d3d3d3;
+    }
+    a{
+      cursor: none;
+    }
+    area{
+      cursor: none;
+    }
+    .custom-cursor {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: url('img/cursor.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
 <body bgcolor="black" text="#d3d3d3">
+<div class="custom-cursor"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cursor = document.querySelector(".custom-cursor");
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
+    });
+  });
+</script>
 <div class="grad">
 <h1 align = "middle">Орден Тамплиеров</h1>
 </div>

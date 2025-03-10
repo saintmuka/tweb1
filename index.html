@@ -1,10 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Орден Тамплиеров</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
 
@@ -20,33 +19,102 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
+  <style>
+    body {
+      cursor: none;
+      background-color: black;
+      color: #d3d3d3;
+    }
+    img{
+      cursor: none;
+    }
+      a{
+        cursor: none;
+      }
+      area{
+        cursor: none;
+      }
+    .custom-cursor {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: url('img/cursor.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
 
 <body>
+<div class="custom-cursor"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cursor = document.querySelector(".custom-cursor");
 
-  <!-- Add your site or application content here -->
-  <body bgcolor = 000000>
-  <body text = #d3d3d3>
-  <div class="grad">
-  <h1 align = "middle">Орден Тамплиеров</h1>
-    </div>
-  <div class="links">
-  <p align ="middle">
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
+    });
+  });
+</script>
+<div class="grad">
+  <h1 align="middle">Орден Тамплиеров</h1>
+</div>
+
+<div class="links">
+  <p align="middle">
     <a href="map.html"> Карта сайта</a>
-    </div>
   </p>
-  <hr>
-  <p align="left"> Тамплие́ры (от фр. templiers) или храмовники[1], также известны под официальными названиями:<br> О́рден бе́дных ры́царей Христа́ (L'Ordre des Pauvres Chevaliers du Christ),<br> О́рден бе́дных ры́царей Иерусали́мского хра́ма (L'Ordre des Pauvres Chevaliers du Temple de Jerusalem), <br>Бе́дные во́ины Христа́ и Хра́ма Соломо́на (лат. Pauperes commilitones Christi Templique Salomonici)<br> Это - духовно-рыцарский орден, основанный на Святой земле в 1119 году[1] небольшой группой рыцарей во главе с Гуго де Пейном после Первого крестового похода[2]. Второй по времени основания (примерно через 20 лет после госпитальеров) из религиозных военных орденов.</p>
-  <script src="js/app.js"></script>
-  <hr>
-  <h3 align="middle"> Чтобы узнать больше, нажми на крест тамплиеров</h3>
-  <center>
+</div>
 
-  <img src="img/cross.png" align = middle widht = 150 height = 150 usemap="#link">
-    <map name="link">
-    <area shape ="rect" coords="0,0,150,150" href = "page2.html">
-    </map>
-    </center>
+<hr>
+
+<p align="left">
+  Тамплие́ры (от фр. templiers) или храмовники, также известны под официальными названиями:<br>
+  О́рден бе́дных ры́царей Христа́ (L'Ordre des Pauvres Chevaliers du Christ),<br>
+  О́рден бе́дных ры́царей Иерусали́мского хра́ма (L'Ordre des Pauvres Chevaliers du Temple de Jerusalem),<br>
+  Бе́дные во́ины Христа́ и Хра́ма Соломо́на (лат. Pauperes commilitones Christi Templique Salomonici)<br>
+  Это - духовно-рыцарский орден, основанный на Святой земле в 1119 году небольшой группой рыцарей во главе с Гуго де Пейном после Первого крестового похода. Второй по времени основания (примерно через 20 лет после госпитальеров) из религиозных военных орденов.
+</p>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cursor = document.querySelector(".custom-cursor");
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
+    });
+  });
+</script>
+
+<hr>
+<h3 align="middle">Чтобы узнать больше, нажми на крест тамплиеров</h3>
+<center>
+  <img src="img/cross.png" width="150" height="150" usemap="#link">
+  <map name="link">
+    <area shape="rect" coords="0,0,150,150" href="page2.html">
+  </map>
+  <br>
+  <img id=ad src="img/reklama1.png" width="300" height="200">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const ad = document.getElementById('ad');
+      const ads = [
+        'img/reklama1.png',
+        'img/reklama2.png',
+        'img/reklama3.png',
+        'img/reklama4.png',
+        'img/reklama5.png',
+      ];
+      ad.onclick = function() {
+        const randomIndex = Math.floor(Math.random() * ads.length);
+        this.src = ads[randomIndex];
+      };
+    });
+    </script>
+</center>
 </body>
-
 </html>
