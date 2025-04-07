@@ -76,12 +76,12 @@
 
     const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d).{6,}$/;
     if (!passwordPattern.test(password)) {
-      message.textContent = "Пароль должен быть не менее 6 символов и содержать буквы и цифры.";
+      message.textContent = "Пароль должен быть не менее 6 символов, содержать буквы и цифры";
       return false;
     }
 
     if (password !== confirmPassword) {
-      message.textContent = "Пароли не совпадают.";
+      message.textContent = "Пароли не совпадают";
       return false;
     }
 

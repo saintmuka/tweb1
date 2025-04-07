@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   echo "<body style='background-color:black; color:#d3d3d3; text-align:center; font-family:Arial'>";
   echo "<h1>Регистрация прошла успешно!</h1>";
-  echo "<p>Данные сохранены на сервере.</p>";
+  echo "<p>Данные сохранены.</p>";
   echo "<a href='index.html' style='color:#d3d3d3;'>Вернуться на главную</a>";
   echo "</body>";
 } else {
