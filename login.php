@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $hashedPassword = password_hash($safePassword, PASSWORD_DEFAULT);
 
 
-  $file = fopen("users.txt", "a");
+  $file = fopen("users.json", "a");
   fwrite($file, "Email: $safeEmail | Password: $hashedPassword\n");
   fclose($file);
 
