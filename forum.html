@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Форум Тамплиеров</title>
+  <link rel="stylesheet" href="css/style2.css">
+  <style>
+    body {
+      cursor: none;
+      background-color: black;
+      color: #d3d3d3;
+    }
+    a, area {
+      cursor: none;
+      color: #d3d3d3;
+    }
+    .custom-cursor {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: url('img/cursor.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+    .login-form {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .login-form input {
+      padding: 8px;
+      margin: 5px;
+      background-color: #222;
+      border: 1px solid #555;
+      color: #d3d3d3;
+    }
+    .login-form button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #d3d3d3;
+      border: none;
+      cursor: pointer;
+    }
+    .login-form button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="custom-cursor"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cursor = document.querySelector(".custom-cursor");
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
+    });
+  });
+
+  function validateForm() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const message = document.getElementById("message");
+
+    message.style.color = "red";
+    message.textContent = "";
+
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailPattern.test(email)) {
+      message.textContent = "Неверный формат email.";
+      return false;
+    }
+
+    const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d).{6,}$/;
+    if (!passwordPattern.test(password)) {
+      message.textContent = "Пароль должен быть не менее 6 символов и содержать буквы и цифры.";
+      return false;
+    }
+
+    if (password !== confirmPassword) {
+      message.textContent = "Пароли не совпадают.";
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+<div class="grad">
+  <h1 align="middle">Форум Тамплиеров</h1>
+</div>
+
+<div class="links" align="middle">
+  <p>
+    <a href="map.html">Карта сайта</a>
+    <a href="index.html">Домой</a>
+  </p>
+</div>
+
+<hr>
+
+
+<div class="login-form">
+  <h2>Вход</h2>
+  <form action="login.php" method="POST" onsubmit="return validateForm();">
+    <input type="email" name="email" id="email" placeholder="Email" required><br>
+    <input type="password" name="password" id="password" placeholder="Пароль" required><br>
+    <input type="password" id="confirmPassword" placeholder="Подтвердите пароль" required><br>
+    <button type="submit">Войти</button>
+  </form>
+  <p id="message"></p>
+</div>
+
+</body>
+</html>
